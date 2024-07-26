@@ -1,4 +1,10 @@
 # Laravel Horizon Clear All
+<p>
+    <a href="https://github.com/TWithers/laravel-horizon-clear-all/actions"><img alt="GitHub Workflow Status (main)" src="https://github.com/TWithers/laravel-horizon-clear-all/actions/workflows/tests.yml/badge.svg"></a>
+    <a href="https://packagist.org/packages/twithers/laravel-horizon-clear-all"><img alt="Total Downloads" src="https://img.shields.io/packagist/dt/twithers/laravel-horizon-clear-all"></a>
+    <a href="https://packagist.org/packages/twithers/laravel-horizon-clear-all"><img alt="Latest Version" src="https://img.shields.io/packagist/v/twithers/laravel-horizon-clear-all"></a>
+    <a href="https://packagist.org/packages/twithers/laravel-horizon-clear-all"><img alt="License" src="https://img.shields.io/packagist/l/twithers/laravel-horizon-clear-all"></a>
+</p>
 
 ------
 
