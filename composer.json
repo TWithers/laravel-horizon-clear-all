@@ -9,7 +9,6 @@
       "email": "timothy.withers@gmail.com"
     }
   ],
-  "version": "1.0.0",
   "require": {
     "php": "^8.2.0"
   },
