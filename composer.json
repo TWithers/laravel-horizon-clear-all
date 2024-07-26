@@ -1,0 +1,65 @@
+{
+  "name": "twithers/laravel-horizon-clear-all",
+  "description": "Adds a command to easily clear all your defined queues at once.",
+  "keywords": ["laravel", "horizon", "queue", "command", "clear"],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Tim Withers",
+      "email": "timothy.withers@gmail.com"
+    }
+  ],
+  "version": "1.0.0",
+  "require": {
+    "php": "^8.2.0"
+  },
+  "require-dev": {
+    "laravel/framework": "^11.17.0",
+    "laravel/horizon": "^5.26",
+    "laravel/pint": "^1.17.0",
+    "mockery/mockery": "^1.6",
+    "orchestra/testbench": "^9.2",
+    "phpunit/phpunit": "^11.2",
+    "predis/predis": "^2.2",
+    "rector/rector": "^1.2.2",
+    "symfony/var-dumper": "^7.1.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "TimWithers\\LaravelHorizonClearAll\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Tests\\": "tests/"
+    }
+  },
+  "minimum-stability": "stable",
+  "prefer-stable": true,
+  "config": {
+    "sort-packages": true,
+    "preferred-install": "dist",
+    "allow-plugins": {
+      "pestphp/pest-plugin": true
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "TimWithers\\LaravelHorizonClearAll\\LaravelHorizonClearAllServiceProvider"
+      ]
+    }
+  },
+  "scripts": {
+    "refacto": "rector",
+    "lint": "pint",
+    "test:refacto": "rector --dry-run",
+    "test:lint": "pint --test",
+    "test:unit": "phpunit",
+    "test": [
+      "@test:refacto",
+      "@test:lint",
+      "@test:unit"
+    ]
+  }
+}
