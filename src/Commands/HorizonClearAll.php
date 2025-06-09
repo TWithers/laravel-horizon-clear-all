@@ -71,7 +71,7 @@ final class HorizonClearAll extends Command
 
         $uniqueJobKeys = Redis::keys('laravel_unique_job*');
         foreach ($uniqueJobKeys as $key) {
-            Redis::del($key);
+            Redis::del(str($key)->after(config('database.redis.options.prefix')));
         }
         $this->line('<info>Cleared '.count($uniqueJobKeys).' job keys</info>');
 
