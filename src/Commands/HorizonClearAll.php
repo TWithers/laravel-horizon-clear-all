@@ -8,6 +8,7 @@ use Illuminate\Console\Command;
 use Illuminate\Console\ConfirmableTrait;
 use Illuminate\Queue\QueueManager;
 use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\Redis;
 use Laravel\Horizon\RedisQueue;
 use Laravel\Horizon\Repositories\RedisJobRepository;
 use Symfony\Component\Console\Attribute\AsCommand;
@@ -67,6 +68,12 @@ final class HorizonClearAll extends Command
 
             $this->line('<info>Cleared '.$count.' '.str('job')->plural($count).' from the ['.$queue.'] queue</info>');
         }
+
+        $uniqueJobKeys = Redis::keys('laravel_unique_job*');
+        foreach ($uniqueJobKeys as $key) {
+            Redis::del($key);
+        }
+        $this->line('<info>Cleared '.count($uniqueJobKeys).' job keys</info>');
 
         return 0;
     }
